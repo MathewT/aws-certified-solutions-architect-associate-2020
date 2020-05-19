@@ -135,6 +135,15 @@ Users give up their own permissions while they take on the permissions of the ro
 when the user exits the temporary role.
 1. An AWS app or service such as EC2 can *assume* a role for which to make programmatic requests to AWS services
 
+**Roles from IAM Console**
+
+IAM roles are a secure way to grant permissions to entities that you trust. Examples of entities include the following:
+
+1. IAM user in another account
+1. Application code running on an EC2 instance that needs to perform actions on AWS resources
+1. An AWS service that needs to act on resources in your account to provide its features
+1. Users from a corporate directory who use identity federation with SAML
+1. IAM roles issue keys that are valid for short durations, making them a more secure way to grant access.
 
 ## ADFS
 

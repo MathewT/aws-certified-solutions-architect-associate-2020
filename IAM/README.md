@@ -8,7 +8,7 @@
 **Access Management**
   * Authorization
   
-AWS IAM manages **users** and their level of access to the AWS console.  
+AWS IAM manages **users , groups, permissions and roles** and their level of access to the AWS console.  
 
 ## Main Features
 1. Centralized control of the AWS account
@@ -22,6 +22,7 @@ to access the AWS account.
 1. Multifactor Authentication for console access
 1. Temporary access to resources.  E.g allow web or mobile users temporary access to DynamoDb or S3 to store data.  
 1. PCI/DSS compliance.   Compliance required for services accepting online payments and storing credit card data
+1. Allows setup of password rotation policy.
 
 ## Eventually Consistent
 1. Changes made via IAM to identity or resource permissions are "eventually consistent"
@@ -48,6 +49,7 @@ to access the AWS account.
 1. New users have NO permissions when first created, cannot access any resources
 1. New users are assigned Access Key ID and Secret Access Key when first created
 1. **Best Practice:** Always setup Multi-factor authentication (MFA) on the root account
+1. **Best Practice:** Setup IAM password policy. 
 1. Each user can have their own password for Console access
 1. Each user can have their own access key for programmatic access to resources within the account
 1. Users can be non-human machine users

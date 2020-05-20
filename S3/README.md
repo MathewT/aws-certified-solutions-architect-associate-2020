@@ -4,3 +4,5 @@
 
 :sparkles: [S3 Documentation](http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html) :sparkles:
 
+:heart:  
+

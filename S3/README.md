@@ -88,24 +88,44 @@ replicate to the destination bucket.  Still charged for those object versions in
   * Resilient against events that impact an entire Availability Zone
   * Supports SSL for data in transit and encryption of data at rest
   
+### Amazon S3 Intelligent-Tiering (S3 Intelligent-Tiering)
+> Amazon S3 Intelligent-Tiering (S3 Intelligent-Tiering) is the only cloud storage class that delivers automatic cost savings by moving objects between four access tiers when access patterns change. The S3 Intelligent-Tiering storage class is designed to optimize costs by automatically moving data to the most cost-effective access tier, without operational overhead. It works by storing objects in four access tiers: two low latency access tiers optimized for frequent and infrequent access, and two optional archive access tiers designed for asynchronous access that are optimized for rare access.
+
+> S3 Intelligent-Tiering works by storing objects in four access tiers: two low latency access tiers optimized for frequent and infrequent access, and two opt-in archive access tiers designed for asynchronous access that are optimized for rare access. Objects uploaded or transitioned to S3 Intelligent-Tiering are automatically stored in the Frequent Access tier. S3 Intelligent-Tiering works by monitoring access patterns and then moving the objects that have not been accessed in 30 consecutive days to the Infrequent Access tier. Once you have activated one or both of the archive access tiers, S3 Intelligent-Tiering will automatically move objects that haven’t been accessed for 90 consecutive days to the Archive Access tier and then after 180 consecutive days of no access to the Deep Archive Access tier. If the objects are accessed later, S3 Intelligent-Tiering moves the objects back to the Frequent Access tier. 
+
+> There are no retrieval fees when using the S3 Intelligent-Tiering storage class, and no additional tiering fees when objects are moved between access tiers within S3 Intelligent-Tiering. It is the ideal storage class for data sets with unknown storage access patterns, like new applications, or unpredictable access patterns, like data lakes. 
+
+**Key Features:**
+* Automatically optimizes storage costs for data with changing access patterns
+* Stores objects in four access tiers, optimized for frequent, infrequent, archive, and deep archive access
+* Frequent and Infrequent Access tiers have same low latency and high throughput performance of S3 Standard
+* Activate optional automatic archive capabilities for objects that become rarely accessed
+* Archive access and deep Archive access tiers have same performance as Glacier and Glacier Deep Archive
+* Designed for durability of 99.999999999% of objects across multiple Availability Zones
+* Designed for 99.9% availability over a given year
+* Backed with the Amazon S3 Service Level Agreement for availability
+* Small monthly monitoring and auto-tiering fee
+* No operational overhead, no retrieval fees, no additional tiering fees apply when objects are moved between access tiers within the S3 Intelligent-Tiering storage class
 
 
-  ### S3 IA (Infrequently Accessed)
-  * Fast retrieval
-  * **Minimum object size is 128KB**
-  * **Miniumum storage duration is 30 days**
-  * For objects that are accessed less frequently but requires rapid retrieval
-  * 11 9s durability
-  * Example:  Payroll data which is not accessed frequently, accessed at end of year, 
-    needed quickly when requested access when needed.
-  * Lower fee than S3 **but you are charged a retrieval fee per GB**
-  ### Reduced Redundancy Storage (RRS)
+### S3 IA (Infrequently Accessed)
+* Fast retrieval
+* **Minimum object size is 128KB**
+* **Miniumum storage duration is 30 days**
+* For objects that are accessed less frequently but requires rapid retrieval
+* 11 9s durability
+* Example:  Payroll data which is not accessed frequently, accessed at end of year, 
+needed quickly when requested access when needed.
+* Lower fee than S3 **but you are charged a retrieval fee per GB**
+
+### Reduced Redundancy Storage (RRS)
   * Fast retrieval
   * 99.99% durability
   * 99.99% availability over a given year
   * Used to store data that can be lost or easily regenerated (e.g. image
 thumbnails)
-  ### Glacier
+
+### Glacier
   * Separate and independent from S3 but integrates tightly into S3
   * 11 9s durability
   * Very slow retrieval
@@ -113,8 +133,6 @@ thumbnails)
   * Archival only
   * **3-5 hours to retrieve data (definitely on the exam**
   * **Minimum storage duration is 90 days**
-
-![Storage Tiers](https://github.com/MathewT/aws-certified-solutions-architect-associate-2020/blob/master/S3/s3-tiers.JPG)
 
 ## S3 Charges
 1. Storage

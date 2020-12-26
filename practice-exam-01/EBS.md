@@ -14,5 +14,11 @@
 
 > Maximum IOPS and throughput are guaranteed only on Instances built on the Nitro System provisioned with more than 32,000 IOPS. Other instances guarantee up to 32,000 IOPS and 500 MiB/s. Older io1 volumes might not reach full performance unless you modify the volume.
 
+## EBS vs EFS
+
+> Amazon EFS is a file storage service for use with Amazon EC2. Amazon EFS provides a file system interface, file system access semantics (such as strong consistency and file locking), **and concurrently-accessible storage for up to thousands of Amazon EC2 instances**.
+> 
+> Amazon EBS is a block level storage service for use with Amazon EC2. Amazon EBS can deliver performance for workloads that require the lowest-latency access **to data from a single EC2 instance**.
+
 
 

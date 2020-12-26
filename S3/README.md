@@ -73,15 +73,23 @@ replicate to the destination bucket.  Still charged for those object versions in
   ### S3 Standard
   * Fast retrieval
   * Designed for 99.99% availability
-  * Amazon Guarantee is 99.9% availability
+  * Backed with the Amazon S3 Service Level Agreement for availability
+  * Amazon Guarantee is 99.9% availability across multiple AZs
   * 11 9s durability
   * Most expensive
   * No minimum object size
+  * S3 Lifecycle management for automatic migration of objects to other S3 Storage Classes  
   * Minimum storage duration of **30 days before Lifecycle transfer to IA**
   * Minimum storage duration of **1 day before Lifecycle transfer to Glacier or Delete**
   * No special retrieval fee
   * Objects are stored in multiple devices within a facility and across mulitple facilities
   * Designed to sustain the loss of 2 facilities concurrently
+  * Low latency and high throughput performance
+  * Resilient against events that impact an entire Availability Zone
+  * Supports SSL for data in transit and encryption of data at rest
+  
+
+
   ### S3 IA (Infrequently Accessed)
   * Fast retrieval
   * **Minimum object size is 128KB**

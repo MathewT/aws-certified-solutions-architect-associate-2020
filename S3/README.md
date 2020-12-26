@@ -70,6 +70,9 @@ replicate to the destination bucket.  Still charged for those object versions in
 1. You cannot **daisy chain** replication buckets at this time.
 
 ## S3 Storage Tiers or Classes (Tiered Storage)
+
+[AWS S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/)
+
   ### S3 Standard
   * Fast retrieval
   * Designed for 99.99% availability
@@ -109,6 +112,9 @@ replicate to the destination bucket.  Still charged for those object versions in
 
 
 ### S3 IA (Infrequently Accessed)
+> S3 Standard-IA is for data that is accessed less frequently, but requires rapid access when needed. S3 Standard-IA offers the high durability, high throughput, and low latency of S3 Standard, with a low per GB storage price and per GB retrieval fee. This combination of low cost and high performance make S3 Standard-IA ideal for long-term storage, backups, and as a data store for disaster recovery files. S3 Storage Classes can be configured at the object level and a single bucket can contain objects stored across S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA. You can also use S3 Lifecycle policies to automatically transition objects between storage classes without any application changes.
+
+**Key Features:**
 * Fast retrieval
 * **Minimum object size is 128KB**
 * **Miniumum storage duration is 30 days**
@@ -118,21 +124,50 @@ replicate to the destination bucket.  Still charged for those object versions in
 needed quickly when requested access when needed.
 * Lower fee than S3 **but you are charged a retrieval fee per GB**
 
-### Reduced Redundancy Storage (RRS)
-  * Fast retrieval
-  * 99.99% durability
-  * 99.99% availability over a given year
-  * Used to store data that can be lost or easily regenerated (e.g. image
+### Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA) (Formerly Reduced Redundancy)
+
+> S3 One Zone-IA is for data that is accessed less frequently, but requires rapid access when needed. Unlike other S3 Storage Classes which store data in a minimum of three Availability Zones (AZs), S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA. S3 One Zone-IA is ideal for customers who want a lower-cost option for infrequently accessed data but do not require the availability and resilience of S3 Standard or S3 Standard-IA. It’s a good choice for storing secondary backup copies of on-premises data or easily re-creatable data. You can also use it as cost-effective storage for data that is replicated from another AWS Region using S3 Cross-Region Replication.
+
+> S3 One Zone-IA offers the same high durability†, high throughput, and low latency of S3 Standard, with a low per GB storage price and per GB retrieval fee. **S3 Storage Classes can be configured at the object level, and a single bucket can contain objects stored across S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA.** You can also use S3 Lifecycle policies to automatically transition objects between storage classes without any application changes.
+
+**Key Features:**
+* Same low latency and high throughput performance of S3 Standard
+* Designed for durability of 99.999999999% of objects in a single Availability Zone†
+* Designed for 99.5% availability over a given year
+* Backed with the Amazon S3 Service Level Agreement for availability
+* Supports SSL for data in transit and encryption of data at rest
+* S3 Lifecycle management for automatic migration of objects to other S3 Storage Classes
+* Used to store data that can be lost or easily regenerated (e.g. image
 thumbnails)
 
-### Glacier
-  * Separate and independent from S3 but integrates tightly into S3
-  * 11 9s durability
-  * Very slow retrieval
-  * Very cheap, $0.01 per GB per month
-  * Archival only
-  * **3-5 hours to retrieve data (definitely on the exam**
-  * **Minimum storage duration is 90 days**
+† Because S3 One Zone-IA stores data in a single AWS Availability Zone, data stored in this storage class will be lost in the event of Availability Zone destruction.
+
+
+### Amazon S3 Glacier (S3 Glacier)
+> S3 Glacier is a secure, durable, and low-cost storage class for data archiving. You can reliably store any amount of data at costs that are competitive with or cheaper than on-premises solutions. To keep costs low yet suitable for varying needs, S3 Glacier provides three retrieval options that range from a few minutes to hours. You can upload objects directly to S3 Glacier, or use S3 Lifecycle policies to transfer data between any of the S3 Storage Classes for active data (S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA) and S3 Glacier. For more information, visit the Amazon S3 Glacier page »
+
+**Key Features:** 
+* Designed for durability of 99.999999999% of objects across multiple Availability Zones
+* Data is resilient in the event of one entire Availability Zone destruction
+* Supports SSL for data in transit and encryption of data at rest
+* Low-cost design is ideal for long-term archive
+* Very cheap, $0.01 per GB per month
+* Configurable retrieval times, from minutes to hours
+* Separate and independent from S3 but integrates tightly into S3
+* S3 PUT API for direct uploads to S3 Glacier, and S3 Lifecycle management for automatic migration of objects
+* **Minimum storage duration is 90 days**
+* **3-5 hours to retrieve data (definitely on the exam)**
+
+
+### Amazon S3 Glacier Deep Archive (S3 Glacier Deep Archive)
+> S3 Glacier Deep Archive is Amazon S3’s lowest-cost storage class and supports long-term retention and digital preservation for data that may be accessed once or twice in a year. It is designed for customers — particularly those in highly-regulated industries, such as the Financial Services, Healthcare, and Public Sectors — that retain data sets for 7-10 years or longer to meet regulatory compliance requirements. S3 Glacier Deep Archive can also be used for backup and disaster recovery use cases, and is a cost-effective and easy-to-manage alternative to magnetic tape systems, whether they are on-premises libraries or off-premises services. S3 Glacier Deep Archive complements Amazon S3 Glacier, which is ideal for archives where data is regularly retrieved and some of the data may be needed in minutes. All objects stored in S3 Glacier Deep Archive are replicated and stored across at least three geographically-dispersed Availability Zones, protected by 99.999999999% of durability, and can be restored within 12 hours.
+
+**Key Features:**
+* Designed for durability of 99.999999999% of objects across multiple Availability Zones
+* Lowest cost storage class designed for long-term retention of data that will be retained for 7-10 years
+* Ideal alternative to magnetic tape libraries
+* Retrieval time within 12 hours
+* S3 PUT API for direct uploads to S3 Glacier Deep Archive, and S3 Lifecycle management for automatic migration of objects
 
 ## S3 Charges
 1. Storage

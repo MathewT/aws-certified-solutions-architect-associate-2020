@@ -10,7 +10,7 @@
 
 [Amazon EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html)
 
-![Alt text](EBS-SSD.jpg "Optional title")
+![Alt text](https://github.com/MathewT/aws-certified-solutions-architect-associate-2020/blob/master/practice-exam-01/EBS-SSD.png "Optional title")
 
 > Maximum IOPS and throughput are guaranteed only on Instances built on the Nitro System provisioned with more than 32,000 IOPS. Other instances guarantee up to 32,000 IOPS and 500 MiB/s. Older io1 volumes might not reach full performance unless you modify the volume.
 

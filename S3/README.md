@@ -70,7 +70,7 @@ replicate to the destination bucket.  Still charged for those object versions in
 1. You cannot **daisy chain** replication buckets at this time.
 
 ## S3 Storage Tiers or Classes (Tiered Storage)
-1. S3 Standard
+  ### S3 Standard
   * Fast retrieval
   * Designed for 99.99% availability
   * Amazon Guarantee is 99.9% availability
@@ -82,22 +82,22 @@ replicate to the destination bucket.  Still charged for those object versions in
   * No special retrieval fee
   * Objects are stored in multiple devices within a facility and across mulitple facilities
   * Designed to sustain the loss of 2 facilities concurrently
-1. S3 IA (Infrequently Accessed)
+  ### S3 IA (Infrequently Accessed)
   * Fast retrieval
   * **Minimum object size is 128KB**
   * **Miniumum storage duration is 30 days**
   * For objects that are accessed less frequently but requires rapid retrieval
   * 11 9s durability
   * Example:  Payroll data which is not accessed frequently, accessed at end of year, 
-  needed quickly when requested access when needed.
+    needed quickly when requested access when needed.
   * Lower fee than S3 **but you are charged a retrieval fee per GB**
-1. Reduced Redundancy Storage (RRS)
+  ### Reduced Redundancy Storage (RRS)
   * Fast retrieval
   * 99.99% durability
   * 99.99% availability over a given year
   * Used to store data that can be lost or easily regenerated (e.g. image
 thumbnails)
-1. Glacier
+  ### Glacier
   * Separate and independent from S3 but integrates tightly into S3
   * 11 9s durability
   * Very slow retrieval

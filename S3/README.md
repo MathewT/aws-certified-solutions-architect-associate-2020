@@ -106,7 +106,7 @@ thumbnails)
   * **3-5 hours to retrieve data (definitely on the exam**
   * **Minimum storage duration is 90 days**
 
-![Storage Tiers](https://github.com/MathewT/aws-certified-developer/blob/master/S3/s3-tiers.JPG)
+![Storage Tiers](https://github.com/MathewT/aws-certified-solutions-architect-associate-2020/blob/master/S3/s3-tiers.JPG)
 
 ## S3 Charges
 1. Storage
@@ -122,7 +122,6 @@ thumbnails)
   + Data arrives at an Edge Location and is transferred (uploaded) to S3 via optimized path
   + Edge Locations are much more closer to end users than a geo-located bucket :sparkles:
   
-
 
 ## Lifecyle Management Rules (Automatically move objects to lower cost storage tiers)
 

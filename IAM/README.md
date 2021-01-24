@@ -7,7 +7,13 @@
 
 **Access Management**
   * Authorization
-  
+
+AWS IAM manages:
+  * Users
+  * Groups
+  * Permissions
+  * Roles
+
 AWS IAM manages **users , groups, permissions and roles** and their level of access to the AWS console.  
 
 ## Main Features

@@ -31,7 +31,8 @@ No transitive peering
 * 10.0.1.0/16 (largest) - 10.0.1.0/28 (smallest)
 * 10.0.2.0/16 (largest) - 10.0.2.0/28 (smallest)
 * By default, Auto-assign public IPV4 address set to No, change to Yes if needed
-* New subnets by default are assigned to the Main route table and don't have a route to the Internet
+* New subnets by default are associated to the Main route table and don't have a route to the Internet
+* **Subnets not explicitly associated to a route table are associated to the Main route table by default**
 
 ## Create Internet Gateway
 * Associate to new VPC

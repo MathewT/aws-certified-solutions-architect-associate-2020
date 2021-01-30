@@ -42,3 +42,13 @@ No transitive peering
 * Create new route table and associate to the VPC
 * On the Routes tab of the Route Table, add a new IPV4 route 0.0.0.0/0 and IPV6 ::/0 to Internet Gateway respectively
 * Now, any subnet associated to this route table will now route traffic to the Internet 
+
+## NAT Instance and NAT Gateway
+* Purpose is to enable EC2 instances in private subnets to connect to the internet to download
+* Most of the time, use NAT Gateway
+* NAT Instances are on the way out but still on the exam
+* NAT Instance is a actually an EC2 instance
+* NAT Gateway is a highly available global service
+* NAT Gateways are redundant inside the AZ
+* Create NAT Gateway on the public subnet
+* Edit Main route table, add destination 0.0.0.0/0 to target the NAT Gateway

@@ -52,3 +52,9 @@ No transitive peering
 * NAT Gateways are redundant inside the AZ
 * Create NAT Gateway on the public subnet
 * Edit Main route table, add destination 0.0.0.0/0 to target the NAT Gateway
+
+## scp pem file example
+```bash
+scp.exe -i aCloudGuruPart1.pem  aCloudGuruPart1.pem  ec2-user@3.239.248.207:/home/ec2-user
+```
+

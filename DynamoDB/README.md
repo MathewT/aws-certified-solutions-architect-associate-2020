@@ -48,7 +48,14 @@ Typed data values that make up a DynamoDB item.
 ### Primary Key
 
 1. Every item must include a primary key.  
-1. Can be single value or composite of two values.  
+1. Can be single value (partition key) or composite of two values (partition key and sort key).  
+1. Simple primary key
+    1. Partition key
+    1. Fetch single record only
+1. Composite key
+    1. Partition key and sort key
+    1. Query all items matching a partition key and further narrow down by sort key
+    1. Great for handling relations between items
 1. Each item in a table is uniquely identifiable by its primary key.
 1. Primary key selection and design is the most important part of DynamoDB modelling. 
 1. Almost all data access is via primary keys.
@@ -58,7 +65,19 @@ Typed data values that make up a DynamoDB item.
 1. Used when additional flexibility is needed
 1. Secondary access pattern
 1. Must specify a primary key on creation
+1. Specify primary key (single or composite) like for main table
 1. AWS will copy all items from the main table into the secondary index in the reshaped form.  You can then query the secondary index.
+1. Two kinds of secondary indexes:
+    1. Local secondary index (LSI)
+        1. Uses the same partition key as the table partition key but a different sort key
+        1. The partition key can act like a top-level property and different sort keys for granular filters
+        1. Must be created when the table is created
+        1. Eventual consistency by default, can be strongly consistent but at a higher cost
+    1. Global secondary index (GSI)
+        1. Choose any attributes as partition key and sort key
+        1. Must provisional additional throughput (RCUs, WCUs) for GSI
+        1. GSI throughput is separate from main table
+        1. Data replicated from main table to GSI is eventually consistent only
 
 
 

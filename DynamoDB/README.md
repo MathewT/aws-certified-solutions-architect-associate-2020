@@ -78,6 +78,12 @@ Typed data values that make up a DynamoDB item.
         1. Must provisional additional throughput (RCUs, WCUs) for GSI
         1. GSI throughput is separate from main table
         1. Data replicated from main table to GSI is eventually consistent only
+        1. Can be created after the table already exists
+
+## Item Collections
+    An item collection is a group of items which share the same partition key in either the base table or secondary index.  Item collections are useful for data modelling.
+
+    All items with the same partition key will be kept on the same storage node.
 
 
 

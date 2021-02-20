@@ -43,6 +43,22 @@ Typed data values that make up a DynamoDB item.
   * Scalars - string, number, binary, boolean, null
   * Complex - lists, maps
   * Sets - compound type that represents multiple unique values
+    * string sets, number sets, binary sets
+
+### Primary Key
+
+1. Every item must include a primary key.  
+1. Can be single value or composite of two values.  
+1. Each item in a table is uniquely identifiable by its primary key.
+1. Primary key selection and design is the most important part of DynamoDB modelling. 
+1. Almost all data access is via primary keys.
+
+### Secondary Indexes
+
+1. Used when additional flexibility is needed
+1. Secondary access pattern
+1. Must specify a primary key on creation
+1. AWS will copy all items from the main table into the secondary index in the reshaped form.  You can then query the secondary index.
 
 
 
